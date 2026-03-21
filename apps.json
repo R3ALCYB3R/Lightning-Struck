@@ -3,6 +3,7 @@
   "identifier": "com.r3alcyb3r.lightningstruck",
   "sourceURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/apps.json",
   "headerURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/header.png",
+  "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/source-logo.png",
   "apps": [
     {
       "name": "SwitchUI",
