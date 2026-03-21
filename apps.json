@@ -22,13 +22,21 @@
     }
   ],
   "news": [
-    {
-      "title": "SwitchUI is Coming Soon!",
-      "identifier": "welcome-news",
-      "caption": "The official source is now live. Stay tuned for the first alpha build!",
-      "date": "2026-03-21",
-      "tintColor": "5900ff",
-      "notify": true
+  {
+    "title": "The Road to Alpha 0.1.0",
+    "identifier": "roadmap-news",
+    "caption": "Current Goals: \n1. JIT Integration ⚡️ \n2. ARM64 Optimization 🚀 \n3. Custom UI Layouts 🎮",
+    "date": "2026-03-21",
+    "tintColor": "5900ff",
+    "notify": true
+  },
+  {
+    "title": "SwitchUI is Coming Soon!",
+    "identifier": "welcome-news",
+    "caption": "The official source is now live. Stay tuned for the first alpha build!",
+    "date": "2026-03-21",
+    "tintColor": "5900ff",
+    "notify": false
     }
   ]
 }
