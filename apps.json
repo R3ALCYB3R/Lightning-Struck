@@ -1,50 +1,31 @@
 {
-  "name": "Lightning Struck",
-  "identifier": "com.realcyber.lightningstruck.repo",
-  "subtitle": "Ready to State? The time to Emulate?",
-  "description": "This-Uh-I- just…look at it.",
-  "iconURL": "https://i.imgur.com/wNokSWw.png",
-  "website": "https://altstudio.app",
-  "patreonURL": "https://patreon.com/altstudio",
-  "tintColor": "#5900ff",
-  "featuredApps": [
-    "com.realcyber.switchui"
-  ],
+  "name": "Lightning-Struck",
+  "identifier": "com.r3alcyb3r.lightningstruck",
+  "sourceURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/apps.json",
   "apps": [
     {
       "name": "SwitchUI",
-      "bundleIdentifier": "com.realcyber.switchui",
-      "developerName": "REALCYBER",
-      "version": "0.1.1",
+      "bundleIdentifier": "com.r3alcyb3r.SwitchUI",
+      "developerName": "R3ALCYB3R",
+      "version": "0.1.0-alpha",
       "versionDate": "2026-03-21",
-      "downloadURL": "https://github.com/R3ALCYB3R/Lightning-Struck/releases/download/v0.1.1/SwitchUI.ipa",
-      "localizedDescription": "A high-performance Nintendo Switch emulator for ARM64 devices.",
-      "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/Assets/app-icon.png",
-      "size": 65500000,
-      "permissions": [
-        {
-          "type": "jit",
-          "usageDescription": "JIT is required for playable frame rates on SwitchUI."
-        }
-      ]
+      "versionDescription": "Initial project setup and repository structure.",
+      "downloadURL": "https://github.com/R3ALCYB3R/Lightning-Struck/releases/download/v0.1.0-alpha/SwitchUI.ipa",
+      "localizedDescription": "SwitchUI is a high-performance Nintendo Switch emulator for iOS (ARM64), optimized for A-series and M-series chips. Requires JIT for playable frame rates.",
+      "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/icon.png",
+      "tintColor": "5900ff",
+      "size": 0,
+      "screenshotURLs": []
     }
   ],
   "news": [
     {
-      "title": "LiveContainer Support!",
-      "identifier": "livecontainer-update",
-      "caption": "New Environment Checks",
-      "date": "2026-03-21",
-      "appID": "com.realcyber.switchui",
-      "text": "SwitchUI now detects if you're running in LiveContainer. We've added a safety prompt to ensure you're aware of the environment for the best emulation experience!"
-    },
-    {
-      "title": "Welcome to SwitchUI!",
+      "title": "SwitchUI is Coming Soon!",
       "identifier": "welcome-news",
-      "caption": "The journey begins.",
+      "caption": "The official source is now live. Stay tuned for the first alpha build!",
       "date": "2026-03-21",
-      "appID": "com.realcyber.switchui",
-      "text": "Thanks for adding the Lightning Struck source! SwitchUI is officially in development."
+      "tintColor": "5900ff",
+      "notify": true
     }
   ]
 }
