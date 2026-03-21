@@ -1,51 +1,30 @@
-[🎮 About](#-what-is-switchui) • [📱 Requirements](#-system-requirements) • [📲 Install](#-how-to-install)
+# 🎮 SwitchUI Engine
+### Next-Gen Nintendo Switch Emulation for iOS (ARM64)
 
-![Development Status](https://img.shields.io/badge/Status-Work_In_Progress-5900ff?style=for-the-badge&logo=github)
-# ⚡ Lightning Struck Repo
-
-Welcome to the official source for **SwitchUI** and other projects by **R3ALCYB3R**. 
-
-## 🎮 What is SwitchUI?
-## 📱 System Requirements
-
-| Feature | Minimum | Recommended |
-| :--- | :--- | :--- |
-| **iOS Version** | iOS 15.0 | iOS 17.0+ |
-| **Processor** | A12 Bionic | A14+ or M1/M2/M4 |
-| **RAM** | 4GB | 8GB+ |
-| **Sideloading** | SideStore / AltStore | SideStore (Stable/Nightly) |
-| **Special** | JIT Enabled | JIT Enabled |
-
-**SwitchUI** is a high-performance Nintendo Switch emulator currently in development for iOS (ARM64). It is designed to provide a smooth emulation experience with a focus on modern UI and ease of use.
-
-### ✨ Key Features:
-* **High-Performance Emulation:** Optimized for modern A-series and M-series chips.
-* **JIT Support:** Required for playable frame rates (via SideStore/AltStore).
-* **Environment Detection:** Automatically detects if you are running via **LiveContainer** for better compatibility.
+SwitchUI is an open-source research project focused on bringing high-performance Switch emulation to iOS devices using JIT and Metal API.
 
 ---
 
-## 📲 How to Install
-
-To install SwitchUI and receive updates directly on your device, add this source to your preferred sideloading app.
-
-### 1. Using SideStore (Recommended)
-1. Copy this URL: `https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/apps.json`
-2. Open **SideStore**.
-3. Go to the **Sources** tab.
-4. Tap **+** in the top corner and paste the URL.
-5. Find **SwitchUI** and tap **Install**.
-
-### 2. Manual IPA Installation
-If you prefer to install manually, you can find the latest `.ipa` file in the [Releases](https://github.com/R3ALCYB3R/Lightning-Struck/releases) section of this repository.
+## 🛠️ Technical Specifications
+- **Core:** Optimized ARM64 Execution Environment.
+- **Graphics:** Metal 3.0 Backend for Apple Silicon.
+- **Memory:** Dynamic JIT Memory Management.
+- **Sideloading:** Fully compatible with SideStore and AltStore.
 
 ---
 
-## ⚠️ Requirements
-* **iOS 15.0+**
-* **A12 Chip or newer** (for optimal performance)
-* **JIT Enabled** (SwitchUI will not run games without JIT)
+## 🏗️ Build Requirements (Coming Soon)
+To compile SwitchUI, you will eventually need:
+- Windows 11 (64-bit) or macOS.
+- Visual Studio / Xcode.
+- iOS 15.0+ Device.
 
-## 👤 Credits & Support
-Developed by **R3ALCYB3R**.  
-Check out the [AltStudio website](https://altstudio.app) for more tools.
+---
+
+## 🔒 Privacy-First
+Developed by **R3ALCYB3R**. We use **Proton**-level security standards for all account and data handling. No telemetry, no tracking.
+
+---
+
+## 📂 Related Repositories
+- [Official SideStore Source](https://github.com/R3ALCYB3R/Lightning-Struck)
