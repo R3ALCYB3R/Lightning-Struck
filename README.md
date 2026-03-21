@@ -1,4 +1,4 @@
-![Development Status](https://img.shields.io/badge/Status-Early_Alpha-orange?style=for-the-badge&logo=github)
+![Development Status](https://img.shields.io/badge/Status-Work_In_Progress-orange?style=for-the-badge&logo=github)
 # ⚡ Lightning Struck Repo
 
 Welcome to the official source for **SwitchUI** and other projects by **R3ALCYB3R**. 
