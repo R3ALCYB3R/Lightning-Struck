@@ -1,3 +1,5 @@
+[🎮 About](#-what-is-switchui) • [📱 Requirements](#-system-requirements) • [📲 Install](#-how-to-install)
+
 ![Development Status](https://img.shields.io/badge/Status-Work_In_Progress-5900ff?style=for-the-badge&logo=github)
 # ⚡ Lightning Struck Repo
 
