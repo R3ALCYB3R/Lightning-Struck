@@ -7,6 +7,7 @@
       "name": "SwitchUI",
       "bundleIdentifier": "com.r3alcyb3r.SwitchUI",
       "developerName": "R3ALCYB3R",
+      "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/icon.png",
       "version": "0.1.0-alpha",
       "versionDate": "2026-03-21",
       "versionDescription": "Initial project setup and repository structure.",
