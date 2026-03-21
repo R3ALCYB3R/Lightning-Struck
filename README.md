@@ -4,6 +4,16 @@
 Welcome to the official source for **SwitchUI** and other projects by **R3ALCYB3R**. 
 
 ## 🎮 What is SwitchUI?
+## 📱 System Requirements
+
+| Feature | Minimum | Recommended |
+| :--- | :--- | :--- |
+| **iOS Version** | iOS 15.0 | iOS 17.0+ |
+| **Processor** | A12 Bionic | A14+ or M1/M2/M4 |
+| **RAM** | 4GB | 8GB+ |
+| **Sideloading** | SideStore / AltStore | SideStore (Stable/Nightly) |
+| **Special** | JIT Enabled | JIT Enabled |
+
 **SwitchUI** is a high-performance Nintendo Switch emulator currently in development for iOS (ARM64). It is designed to provide a smooth emulation experience with a focus on modern UI and ease of use.
 
 ### ✨ Key Features:
