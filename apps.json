@@ -3,8 +3,19 @@
   "identifier": "com.r3alcyb3r.lightningstruck",
   "sourceURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/apps.json",
   "headerURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/header.png",
-  "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/source-logo.png",
+  "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/R3ALCYB3R/main/source-logo.png",
   "apps": [
+    {
+      "name": "LocalJIT",
+      "bundleIdentifier": "com.r3alcyb3r.localjit",
+      "developerName": "R3ALCYB3R",
+      "subtitle": "JIT Injection & VPN Utility",
+      "version": "0.1.0-alpha",
+      "versionDescription": "Initial Development Build - Coming Soon",
+      "downloadURL": "https://github.com/R3ALCYB3R/LocalJIT/releases",
+      "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/LocalJIT/main/icon.png",
+      "tintColor": "#BF00FF"
+    },
     {
       "name": "SwitchUI",
       "bundleIdentifier": "com.r3alcyb3r.SwitchUI",
@@ -14,29 +25,8 @@
       "versionDate": "2026-03-21",
       "versionDescription": "Initial project setup and repository structure.",
       "downloadURL": "https://github.com/R3ALCYB3R/Lightning-Struck/releases/download/v0.1.0-alpha/SwitchUI.ipa",
-      "localizedDescription": "SwitchUI is a high-performance Nintendo Switch emulator for iOS (ARM64), optimized for A-series and M-series chips. Requires JIT for playable frame rates.",
-      "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/icon.png",
-      "tintColor": "5900ff",
-      "size": 0,
-      "screenshotURLs": []
-    }
-  ],
-  "news": [
-  {
-    "title": "The Road to Alpha 0.1.0",
-    "identifier": "roadmap-news",
-    "caption": "Current Goals: \n1. JIT Integration ⚡️ \n2. ARM64 Optimization 🚀 \n3. Custom UI Layouts 🎮",
-    "date": "2026-03-21",
-    "tintColor": "5900ff",
-    "notify": true
-  },
-  {
-    "title": "SwitchUI is Coming Soon!",
-    "identifier": "welcome-news",
-    "caption": "The official source is now live. Stay tuned for the first alpha build!",
-    "date": "2026-03-21",
-    "tintColor": "5900ff",
-    "notify": false
+      "localizedDescription": "SwitchUI is a high-performance Nintendo Switch emulator for iOS (ARM64), optimized for A-series and M-series chips.",
+      "tintColor": "#5900ff"
     }
   ]
 }
