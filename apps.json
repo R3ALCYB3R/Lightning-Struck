@@ -1,0 +1,24 @@
+{
+  "name": "R3ALCYB3R Store",
+  "identifier": "com.r3alcyb3r.source",
+  "apps": [
+    {
+      "name": "LocalJIT",
+      "bundleIdentifier": "com.r3alcyb3r.localjit",
+      "developerName": "R3ALCYB3R",
+      "version": "1.0.0",
+      "description": "JIT Enabler for iOS/iPadOS",
+      "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/icon.png",
+      "downloadURL": "https://github.com/R3ALCYB3R/Lightning-Struck/releases/download/v1.0.0/LocalJIT.ipa"
+    },
+    {
+      "name": "SwitchUI",
+      "bundleIdentifier": "com.realcyber.switchui",
+      "developerName": "R3ALCYB3R",
+      "version": "1.0.0",
+      "description": "Nintendo Switch Emulator for iOS",
+      "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/icon.png",
+      "downloadURL": "https://github.com/stossy11/MeloNX/releases/latest/download/MeloNX.ipa"
+    }
+  ]
+}
