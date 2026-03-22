@@ -11,7 +11,7 @@
       "developerName": "R3ALCYB3R",
       "version": "1.1.0",
       "description": "Switch-style frontend with integrated LocalJIT (MeloNX Core).",
-      "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/switchui-icon.png",
+      "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/icon.png",
       "downloadURL": "https://github.com/R3ALCYB3R/Lightning-Struck/releases/download/v1.1.0/SwitchUI.ipa",
       "tintColor": "#5D3FD3"
     },
