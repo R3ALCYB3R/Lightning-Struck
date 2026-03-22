@@ -1,14 +1,16 @@
-name: MyLocalApp
+name: SwitchUI
 options:
   bundleIdPrefix: com.r3alcyb3r
 targets:
-  MyLocalApp:
+  SwitchUI:
     type: application
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      - path: Sources # Replace with the folder name where your .swift files are
+      - path: Sources # Put your SwitchUI and LocalJIT files here
     settings:
       base:
-        INFOPLIST_FILE: Info.plist # Make sure you have an Info.plist file
-        PRODUCT_BUNDLE_IDENTIFIER: com.r3alcyb3r.localjit
+        INFOPLIST_FILE: Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.r3alcyb3r.switchui
+        # This part helps with JIT permissions
+        CODE_SIGNING_ALLOWED: NO 
