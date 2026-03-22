@@ -4,7 +4,8 @@ import SwiftUI
 struct SwitchUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Text("SwitchUI + LocalJIT is Active")
+                .font(.largeTitle)
         }
     }
 }
