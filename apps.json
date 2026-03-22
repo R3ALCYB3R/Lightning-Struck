@@ -16,9 +16,9 @@
       "bundleIdentifier": "com.realcyber.switchui",
       "developerName": "R3ALCYB3R",
       "version": "1.0.0",
-      "description": "Nintendo Switch Emulator for iOS",
+      "description": "Custom Switch-style frontend for iOS",
       "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/icon.png",
-      "downloadURL": "https://github.com/stossy11/MeloNX/releases/latest/download/MeloNX.ipa"
+      "downloadURL": "https://github.com/R3ALCYB3R/SwitchUI/releases/latest/download/SwitchUI.ipa"
     }
   ]
 }
