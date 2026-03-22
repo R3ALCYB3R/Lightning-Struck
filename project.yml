@@ -1,0 +1,14 @@
+name: MyLocalApp
+options:
+  bundleIdPrefix: com.r3alcyb3r
+targets:
+  MyLocalApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: Sources # Replace with the folder name where your .swift files are
+    settings:
+      base:
+        INFOPLIST_FILE: Info.plist # Make sure you have an Info.plist file
+        PRODUCT_BUNDLE_IDENTIFIER: com.r3alcyb3r.localjit
