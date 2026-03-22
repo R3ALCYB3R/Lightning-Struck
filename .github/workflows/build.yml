@@ -8,36 +8,47 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Find and Build
+      - name: Find and Build Workspace
         run: |
-          # 1. Search every folder for a project or workspace
-          PROJECT_PATH=$(find . -name "*.xcodeproj" -o -name "*.xcworkspace" | head -n 1)
+          # 1. Look for .xcworkspace first, then .xcodeproj
+          WORKSPACE=$(find . -name "*.xcworkspace" | head -n 1)
+          PROJECT=$(find . -name "*.xcodeproj" | head -n 1)
           
-          if [ -z "$PROJECT_PATH" ]; then
-            echo "❌ No project file found! Let's check for a Swift Package..."
-            if [ -f "Package.swift" ]; then
-              echo "✅ Found Swift Package. Building..."
-              xcodebuild build -scheme $(xcodebuild -list -json | jq -r '.project.schemes[0]') -sdk iphoneos CODE_SIGNING_ALLOWED=NO
-            else
-              echo "❌ ERROR: No buildable files found."
-              exit 1
-            fi
+          if [ -n "$WORKSPACE" ]; then
+            echo "✅ Found Workspace: $WORKSPACE"
+            # Get the first scheme from the workspace
+            SCHEME=$(xcodebuild -list -workspace "$WORKSPACE" -json | jq -r '.workspace.schemes[0]')
+            
+            xcodebuild archive \
+              -workspace "$WORKSPACE" \
+              -scheme "$SCHEME" \
+              -archivePath build/Local.xcarchive \
+              -sdk iphoneos \
+              -configuration Release \
+              CODE_SIGNING_ALLOWED=NO
           else
-            echo "✅ Found Project at: $PROJECT_PATH"
-            # Get the scheme and build
-            SCHEME=$(xcodebuild -list -project "$PROJECT_PATH" -json | jq -r '.project.schemes[0]' 2>/dev/null || xcodebuild -list -workspace "$PROJECT_PATH" -json | jq -r '.workspace.schemes[0]')
-            xcodebuild archive -project "$PROJECT_PATH" -scheme "$SCHEME" -archivePath build/Local.xcarchive -configuration Release -sdk iphoneos CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+            echo "✅ Found Project: $PROJECT"
+            SCHEME=$(xcodebuild -list -project "$PROJECT" -json | jq -r '.project.schemes[0]')
+            
+            xcodebuild archive \
+              -project "$PROJECT" \
+              -scheme "$SCHEME" \
+              -archivePath build/Local.xcarchive \
+              -sdk iphoneos \
+              -configuration Release \
+              CODE_SIGNING_ALLOWED=NO
           fi
 
-      - name: Package IPA
+      - name: Export Payload
         run: |
           mkdir Payload
-          APP_PATH=$(find . -name "*.app" -type d | grep "Release-iphoneos" | head -n 1)
+          # This pulls the compiled app out of the archive
+          APP_PATH=$(find build/Local.xcarchive/Products/Applications -name "*.app" -maxdepth 1)
           cp -r "$APP_PATH" Payload/
           zip -r LocalBuild.ipa Payload
 
-      - name: Upload Finished IPA
+      - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
-          name: my-unsigned-ipa
+          name: my-local-ipa
           path: LocalBuild.ipa
