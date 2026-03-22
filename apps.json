@@ -10,7 +10,7 @@
       "bundleIdentifier": "com.r3alcyb3r.switchui",
       "developerName": "R3ALCYB3R",
       "version": "1.1.0",
-      "description": "Nintendo Switch Emulator (MeloNX) with a custom frontend.",
+      "description": "Nintendo Switch Emulator (like MeloNX) with a custom frontend.",
       "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/icon.png",
       "downloadURL": "https://github.com/R3ALCYB3R/Lightning-Struck/releases/download/v1.1.0/SwitchUI.ipa",
       "tintColor": "#5D3FD3"
