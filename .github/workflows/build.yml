@@ -1,38 +1,32 @@
-name: Build SwitchUI IPA
-
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch: # This lets you run it manually
+name: Build Local IPA
+on: [push, workflow_dispatch]
 
 jobs:
   build:
     runs-on: macos-latest
-    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Select Xcode Version
-        run: sudo xcode-select -s /Applications/Xcode.app
-
-      - name: Build Archive
+      - name: Build .app (No Signing)
         run: |
-          xcodebuild archive \
-          -project SwitchUI.xcodeproj \
-          -scheme SwitchUI \
-          -configuration Release \
-          -archivePath SwitchUI.xcarchive \
-          CODE_SIGNING_ALLOWED=NO
+          xcodebuild build \
+            -project YourProject.xcodeproj \
+            -scheme YourScheme \
+            -configuration Release \
+            -sdk iphoneos \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            AD_HOC_CODE_SIGNING_ALLOWED=YES
 
-      - name: Create IPA (Payload Trick)
+      - name: Create IPA (The Payload Trick)
         run: |
           mkdir Payload
-          cp -r SwitchUI.xcarchive/Products/Applications/*.app Payload/
-          zip -r SwitchUI.ipa Payload
+          cp -r build/Release-iphoneos/YourApp.app Payload/
+          zip -r YourApp.ipa Payload
 
-      - name: Upload Artifact
+      - name: Upload Finished IPA
         uses: actions/upload-artifact@v4
         with:
-          name: SwitchUI-IPA
-          path: SwitchUI.ipa
+          name: my-app-ipa
+          path: YourApp.ipa
