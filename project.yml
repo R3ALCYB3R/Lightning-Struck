@@ -1,0 +1,16 @@
+name: SwitchUI
+options:
+  bundleIdPrefix: com.r3alcyb3r
+targets:
+  SwitchUI:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - Sources
+    settings:
+      base:
+        INFOPLIST_FILE: Info.plist
+        CODE_SIGN_ENTITLEMENTS: Entitlements.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.r3alcyb3r.switchui
+        CODE_SIGNING_ALLOWED: NO
