@@ -1,0 +1,50 @@
+name: Build Local IPA
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Find and Build Project
+        run: |
+          # Automatically find the first .xcodeproj file in the repo
+          PROJECT_PATH=$(find . -name "*.xcodeproj" -print -quit)
+          
+          if [ -z "$PROJECT_PATH" ]; then
+            echo "❌ ERROR: No .xcodeproj found in the repo!"
+            exit 1
+          fi
+
+          # Get the name of the first Scheme available
+          SCHEME=$(xcodebuild -list -project "$PROJECT_PATH" -json | jq -r '.project.schemes[0]')
+
+          echo "✅ Found Project: $PROJECT_PATH"
+          echo "✅ Found Scheme: $SCHEME"
+
+          # Build the Archive (No Signing)
+          xcodebuild archive \
+            -project "$PROJECT_PATH" \
+            -scheme "$SCHEME" \
+            -archivePath build/Local.xcarchive \
+            -configuration Release \
+            -sdk iphoneos \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=""
+
+      - name: Package IPA
+        run: |
+          mkdir Payload
+          # Finds the .app folder inside the archive we just built
+          APP_PATH=$(find build/Local.xcarchive/Products/Applications -name "*.app" -maxdepth 1)
+          cp -r "$APP_PATH" Payload/
+          zip -r LocalBuild.ipa Payload
+
+      - name: Upload Finished IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-unsigned-ipa
+          path: LocalBuild.ipa
