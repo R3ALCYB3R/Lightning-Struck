@@ -10,6 +10,7 @@ SwitchUI is an open-source research project focused on bringing high-performance
 - **Graphics:** Metal 3.0 Backend for Apple Silicon.
 - **Memory:** Dynamic JIT Memory Management.
 - **Sideloading:** Fully compatible with SideStore and AltStore.
+- **Compatibilities** iPhone 12-latest (you can use an older iphone/ipad, but update it.)
 
 ---
 
