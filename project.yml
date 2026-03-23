@@ -1,6 +1,7 @@
 name: SwitchUI
 options:
   bundleIdPrefix: com.r3alcyb3r
+  # This setting forces the GitHub Action to rebuild the folder links
   createIntermediateGroups: true 
 
 targets:
@@ -9,7 +10,7 @@ targets:
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      # This matches your 3 screenshots perfectly
+      # This matches your iPad folder structure exactly
       - path: App
       - path: Views
       - path: Sources
@@ -20,3 +21,10 @@ targets:
       GENERATE_INFOPLIST_FILE: YES
       PRODUCT_BUNDLE_IDENTIFIER: com.r3alcyb3r.SwitchUI
       SWIFT_VERSION: 5.0
+    info:
+      plist:
+        CFBundleDisplayName: SwitchUI
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
