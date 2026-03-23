@@ -2,14 +2,15 @@ import SwiftUI
 
 @main
 struct SwitchUIApp: App {
-    // This tells the app to stay in memory while you're playing
+    // This tracks the app's state (Active, Background, Inactive)
     @Environment(\.scenePhase) var scenePhase
 
     var body: some Scene {
         WindowGroup {
-            // We start with LaunchView to see the cool animation
+            // This starts the app with your Red animated Launch Screen
             LaunchView()
-                .preferredColorScheme(.dark) // Keeps the Switch vibe
+                // Forces Dark Mode to match the Switch console look
+                .preferredColorScheme(.dark) 
         }
     }
 }
