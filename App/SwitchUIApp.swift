@@ -4,7 +4,8 @@ import SwiftUI
 struct SwitchUIApp: App {
     var body: some Scene {
         WindowGroup {
-            LaunchView() // Starts with your red animation
+            // This starts the app with your Red animation
+            LaunchView()
                 .preferredColorScheme(.dark)
         }
     }
