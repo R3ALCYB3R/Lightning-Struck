@@ -12,7 +12,7 @@ targets:
       - path: App
       - path: Views
       - path: Sources
-      - path: Assets.xcassets # <--- THIS WAS MISSING
+      - path: Assets.xcassets # <--- ADD THIS LINE
     settings:
       ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
       GENERATE_INFOPLIST_FILE: YES
