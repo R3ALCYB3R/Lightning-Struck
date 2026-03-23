@@ -7,32 +7,19 @@ targets:
     platform: iOS
     deploymentTarget: "15.0"
     sources:
-      - Sources          # For App.swift and MainMenuView.swift
-      - Assets.xcassets  # For your AppIcon.appiconset
-      - smash.png        # Loose files in the root
+      - Sources
+      - Assets.xcassets
+      - smash.png
       - kart.png
       - party.png
     settings:
       base:
-        # This MUST match the folder name inside Assets.xcassets
-        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon 
-        ASSETCATALOG_NOTICES: NO
-        ASSETCATALOG_WARNINGS: NO
-        GENERATE_INFOPLIST_FILE: YES
-        MARKETING_VERSION: 1.0
-        CURRENT_PROJECT_VERSION: 1
-        TARGETED_DEVICE_FAMILY: "1,2" # iPhone and iPad
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        GENERATE_INFOPLIST_FILE: NO 
+        INFOPLIST_FILE: Info.plist
+        CODE_SIGN_ENTITLEMENTS: Entitlements.plist
         PRODUCT_BUNDLE_IDENTIFIER: com.realcyber.switchui
-      configs:
-        debug:
-          MTL_ENABLE_DEBUG_INFO: YES
-        release:
-          MTL_ENABLE_DEBUG_INFO: NO
+        TARGETED_DEVICE_FAMILY: "1,2"
     info:
       plist:
-        CFBundleDisplayName: SwitchUI
-        LSRequiresIPhoneOS: YES
         UILaunchScreen: {}
-        UISupportedInterfaceOrientations:
-          - UIInterfaceOrientationLandscapeLeft
-          - UIInterfaceOrientationLandscapeRight
