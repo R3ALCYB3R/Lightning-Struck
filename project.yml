@@ -9,10 +9,10 @@ targets:
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      # This tells the GitHub Action where to find your moved files
-      - path: Sources
-      - path: Views
+      # This matches your 3 screenshots perfectly
       - path: App
+      - path: Views
+      - path: Sources
       - path: Services
       - path: Assets.xcassets
     settings:
