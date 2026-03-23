@@ -1,29 +1,19 @@
 {
-  "name": "R3ALCYB3R Store",
-  "subtitle": "SwitchUI & LocalJIT Official Source",
-  "identifier": "com.r3alcyb3r.source",
-  "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/source-logo.png",
-  "tintColor": "#5D3FD3",
+  "name": "R3ALCYB3R's Apps",
+  "identifier": "com.realcyber.apps",
+  "subtitle": "Switch Emulation & JIT Tools",
+  "description": "Custom SwitchUI and JIT-enabled apps.",
+  "iconURL": "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/icon.png",
   "apps": [
     {
       "name": "SwitchUI",
-      "bundleIdentifier": "com.r3alcyb3r.switchui",
+      "bundleIdentifier": "com.realcyber.switchui",
       "developerName": "R3ALCYB3R",
-      "version": "1.1.0",
-      "description": "Nintendo Switch Emulator (like MeloNX) with a custom frontend.",
-      "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/icon.png",
-      "downloadURL": "https://github.com/R3ALCYB3R/Lightning-Struck/releases/download/v1.1.0/SwitchUI.ipa",
-      "tintColor": "#5D3FD3"
-    },
-    {
-      "name": "LocalJIT",
-      "bundleIdentifier": "com.r3alcyb3r.localjit",
-      "developerName": "R3ALCYB3R",
-      "version": "1.0.0",
-      "description": "Standalone JIT enabler for side-loaded applications.",
-      "iconURL": "https://raw.githubusercontent.com/R3ALCYB3R/Lightning-Struck/main/jit-icon.png",
-      "downloadURL": "https://github.com/R3ALCYB3R/Lightning-Struck/releases/download/v1.0.0/LocalJIT.ipa",
-      "tintColor": "#5D3FD3"
+      "version": "1.0",
+      "versionDate": "2026-03-23",
+      "downloadURL": "https://github.com/YOUR_USERNAME/YOUR_REPO/releases/download/v1.0/SwitchUI.ipa",
+      "localizedDescription": "A custom Switch-style UI for launching JIT-enabled apps.",
+      "iconURL": "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/icon.png"
     }
   ]
 }
