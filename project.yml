@@ -9,7 +9,7 @@ targets:
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      # Only including folders that have files in your screenshots
+      # These 4 paths are confirmed in your latest screenshot
       - path: App
       - path: Views
       - path: Sources
