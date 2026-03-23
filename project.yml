@@ -12,6 +12,7 @@ targets:
       - smash.png
       - kart.png
       - party.png
+      - click.mp3
     settings:
       base:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
