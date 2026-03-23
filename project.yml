@@ -1,48 +1,36 @@
 name: SwitchUI
 options:
   bundleIdPrefix: com.r3alcyb3r
+  # This automatically cleans up "Ghost" files and Red Xs
+  createIntermediateGroups: true 
+
 targets:
   SwitchUI:
     type: application
     platform: iOS
     deploymentTarget: "16.0"
     sources:
+      # This tells Xcode exactly where to look for your code
       - path: App
       - path: Views
       - path: Services
       - path: Sources
       - path: Assets.xcassets
     settings:
-      # This links the AppIcon set we made in Assets.xcassets
+      # This connects the icon we put in Assets.xcassets
       ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-      # Tells Xcode to generate the Info.plist automatically
       GENERATE_INFOPLIST_FILE: YES
       MARKETING_VERSION: 1.0.0
       CURRENT_PROJECT_VERSION: 1
       PRODUCT_BUNDLE_IDENTIFIER: com.r3alcyb3r.SwitchUI
-      # Ensures the launch screen uses our Storyboard or View
-      UILaunchScreen:
-        # If you want a solid red background before LaunchView kicks in:
-        UIColorName: systemRed 
+      SWIFT_VERSION: 5.0
     info:
       plist:
         CFBundleDisplayName: SwitchUI
-        CFBundleExecutable: $(EXECUTABLE_NAME)
-        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
-        CFBundleName: $(PRODUCT_NAME)
-        CFBundlePackageType: $(PRODUCT_BUNDLE_PACKAGE_TYPE)
-        CFBundleShortVersionString: $(MARKETING_VERSION)
-        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
-        LSRequiresIPhoneOS: YES
-        UIApplicationSceneManifest:
-          UISceneConfigurations:
-            UIWindowSceneSessionRoleApplication:
-              - UISceneConfigurationName: Default Configuration
-                UISceneDelegateClass: $(PRODUCT_MODULE_NAME).SceneDelegate
+        CFBundleName: SwitchUI
         UILaunchScreen:
-          # This points to the system-level launch behavior
-          UIImageName: "" 
+          UIImageName: ""
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
-        UIRequiredDeviceCapabilities:
-          - armv7
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
