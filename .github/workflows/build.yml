@@ -1,38 +1,35 @@
-name: Build Local IPA
-on: [push, workflow_dispatch]
+name: Build IPA
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: macos-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: Install XcodeGen
         run: brew install xcodegen
 
-      - name: Generate Project
+      - name: Generate Xcode Project
         run: xcodegen generate
 
-      - name: Build Archive
+      - name: Build App
         run: |
           xcodebuild archive \
             -project SwitchUI.xcodeproj \
             -scheme SwitchUI \
-            -archivePath build/Local.xcarchive \
+            -archivePath SwitchUI.xcarchive \
             -sdk iphoneos \
-            -configuration Release \
             CODE_SIGNING_ALLOWED=NO
 
-      - name: Package IPA
+      - name: Create IPA
         run: |
-          mkdir Payload
-          APP_PATH=$(find build/Local.xcarchive/Products/Applications -name "*.app" -maxdepth 1)
-          cp -r "$APP_PATH" Payload/
-          zip -r LocalBuild.ipa Payload
+          mkdir -p Payload
+          cp -r SwitchUI.xcarchive/Products/Applications/SwitchUI.app Payload/
+          zip -r SwitchUI.ipa Payload
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
-          name: my-unsigned-ipa
-          path: LocalBuild.ipa
+          name: SwitchUI-IPA
+          path: SwitchUI.ipa
