@@ -1,7 +1,7 @@
 name: SwitchUI
 options:
   bundleIdPrefix: com.r3alcyb3r
-  # This setting forces the GitHub Action to rebuild the folder links
+  # This forces the build server to map your new folders
   createIntermediateGroups: true 
 
 targets:
@@ -10,10 +10,10 @@ targets:
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      # This matches your iPad folder structure exactly
+      # We list App and Sources first so the builder finds the @main file
       - path: App
-      - path: Views
       - path: Sources
+      - path: Views
       - path: Services
       - path: Assets.xcassets
     settings:
