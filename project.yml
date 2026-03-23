@@ -15,10 +15,8 @@ targets:
       - path: Assets.xcassets
     settings:
       ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-      # --- FORCE THE BUILD TO IGNORE ICON SIZE ERRORS ---
       ASSETCATALOG_NOTICES: NO
       ASSETCATALOG_WARNINGS: NO
-      # --------------------------------------------------
       GENERATE_INFOPLIST_FILE: YES
       PRODUCT_BUNDLE_IDENTIFIER: com.r3alcyb3r.SwitchUI
       SWIFT_VERSION: 5.0
