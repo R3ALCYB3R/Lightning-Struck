@@ -9,11 +9,11 @@ targets:
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      # This tells the robot to just look everywhere for your files
-      - App
-      - Views
-      - Sources
-      - Assets.xcassets
+      # Only including folders that have files in your screenshots
+      - path: App
+      - path: Views
+      - path: Sources
+      - path: Assets.xcassets
     settings:
       ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
       GENERATE_INFOPLIST_FILE: YES
