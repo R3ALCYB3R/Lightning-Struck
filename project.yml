@@ -8,27 +8,18 @@ targets:
     deploymentTarget: "15.0"
     sources:
       - Sources
+      - Assets.xcassets  # This tells it to look for the icons here
       - smash.png
       - kart.png
       - party.png
-      - SwitchUI-icon.png
     settings:
       base:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_NOTICES: NO
         ASSETCATALOG_WARNINGS: NO
         GENERATE_INFOPLIST_FILE: YES
-        MARKETING_VERSION: 1.0
-        CURRENT_PROJECT_VERSION: 1
-        TARGETED_DEVICE_FAMILY: "1,2" # iPhone and iPad
-      configs:
-        debug:
-          MTL_ENABLE_DEBUG_INFO: YES
-        release:
-          MTL_ENABLE_DEBUG_INFO: NO
+        TARGETED_DEVICE_FAMILY: "1,2"
     info:
       plist:
         CFBundleDisplayName: SwitchUI
-        LSRequiresIPhoneOS: YES
         UILaunchScreen: {}
-        UIS
