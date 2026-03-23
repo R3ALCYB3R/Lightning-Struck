@@ -1,7 +1,7 @@
 name: SwitchUI
 options:
   bundleIdPrefix: com.r3alcyb3r
-  # This forces Xcode to refresh the folder structure and clear Red Xs
+  # This setting is the "Red X Killer" - it forces Xcode to rebuild the file list
   createIntermediateGroups: true 
 
 targets:
@@ -10,14 +10,14 @@ targets:
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      # Xcode will now look inside all these folders to find your code
+      # These must match your GitHub folder names EXACTLY
       - path: App
       - path: Views
       - path: Sources
       - path: Services
       - path: Assets.xcassets
     settings:
-      # Connects your app icon
+      # Links the icon set inside Assets.xcassets
       ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
       GENERATE_INFOPLIST_FILE: YES
       MARKETING_VERSION: 1.0.0
