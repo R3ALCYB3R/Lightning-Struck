@@ -14,9 +14,8 @@ targets:
       - path: Sources
       - path: Assets.xcassets
     settings:
-      # --- PRIMARY ICON SETTINGS ---
+      # This tells the app: "My main logo is inside the Assets folder"
       ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-      # -----------------------------
       GENERATE_INFOPLIST_FILE: YES
       PRODUCT_BUNDLE_IDENTIFIER: com.r3alcyb3r.SwitchUI
       SWIFT_VERSION: 5.0
