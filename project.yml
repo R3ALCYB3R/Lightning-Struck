@@ -9,11 +9,10 @@ targets:
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      # These 4 paths are confirmed in your latest screenshot
       - path: App
       - path: Views
       - path: Sources
-      - path: Assets.xcassets
+      - path: Assets.xcassets # <--- THIS WAS MISSING
     settings:
       ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
       GENERATE_INFOPLIST_FILE: YES
