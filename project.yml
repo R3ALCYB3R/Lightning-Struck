@@ -7,10 +7,42 @@ targets:
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      - Sources
+      - path: App
+      - path: Views
+      - path: Services
+      - path: Sources
+      - path: Assets.xcassets
     settings:
-      base:
-        INFOPLIST_FILE: Info.plist
-        CODE_SIGN_ENTITLEMENTS: Entitlements.plist
-        PRODUCT_BUNDLE_IDENTIFIER: com.r3alcyb3r.switchui
-        CODE_SIGNING_ALLOWED: NO
+      # This links the AppIcon set we made in Assets.xcassets
+      ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      # Tells Xcode to generate the Info.plist automatically
+      GENERATE_INFOPLIST_FILE: YES
+      MARKETING_VERSION: 1.0.0
+      CURRENT_PROJECT_VERSION: 1
+      PRODUCT_BUNDLE_IDENTIFIER: com.r3alcyb3r.SwitchUI
+      # Ensures the launch screen uses our Storyboard or View
+      UILaunchScreen:
+        # If you want a solid red background before LaunchView kicks in:
+        UIColorName: systemRed 
+    info:
+      plist:
+        CFBundleDisplayName: SwitchUI
+        CFBundleExecutable: $(EXECUTABLE_NAME)
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundleName: $(PRODUCT_NAME)
+        CFBundlePackageType: $(PRODUCT_BUNDLE_PACKAGE_TYPE)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSRequiresIPhoneOS: YES
+        UIApplicationSceneManifest:
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClass: $(PRODUCT_MODULE_NAME).SceneDelegate
+        UILaunchScreen:
+          # This points to the system-level launch behavior
+          UIImageName: "" 
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIRequiredDeviceCapabilities:
+          - armv7
