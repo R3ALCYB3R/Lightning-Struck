@@ -9,10 +9,10 @@ targets:
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      # This tells Xcode: "Check Sources FIRST for the App file"
+      # This tells the GitHub Action where to find your moved files
       - path: Sources
-      - path: App
       - path: Views
+      - path: App
       - path: Services
       - path: Assets.xcassets
     settings:
