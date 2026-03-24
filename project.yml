@@ -12,6 +12,10 @@ targets:
       - smash.png
       - kart.png
       - party.png
+      - header.png
+      - icon.png
+      - jit-icon.png
+      - source-logo.png
       - click.mp3
     settings:
       base:
