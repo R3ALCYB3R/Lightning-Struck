@@ -13,7 +13,7 @@ targets:
       - path: party.png
       - path: header.png
       - path: click.mp3
-      - part: jit.js
+      - path: jit.js
     settings:
       base:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
