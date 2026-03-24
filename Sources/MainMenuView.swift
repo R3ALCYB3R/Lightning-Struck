@@ -2,48 +2,40 @@ import SwiftUI
 import AVFoundation
 
 struct MainMenuView: View {
-    @State private var selectedGame: String? = "smash" // Default selection
-    @State private var clickCount = 0
+    @State private var selectedGame: String? = "smash"
+    @State private var rotation: Double = 0
+    @State private var scale: CGFloat = 1.0
     
-    // The list of games from your Root folder
+    // Updated Game List including Roblox and Leo AI
     let games = [
         ("Super Smash Bros. Ultimate", "smash"),
         ("Mario Kart 8 Deluxe", "kart"),
-        ("Mario Party", "party")
+        ("Roblox", "roblox"), // Add roblox.png to your Root!
+        ("Leo AI Coder", "leo")   // Add leo.png to your Root!
     ]
 
     var body: some View {
         ZStack {
-            // Background color
-            Color(red: 0.1, green: 0.1, blue: 0.1).ignoresSafeArea()
+            Color.black.ignoresSafeArea()
             
             VStack(spacing: 0) {
-                // MARK: - TOP BAR (Username & Clock)
-                HStack(spacing: 15) {
-                    // Profile Icon
+                // TOP BAR
+                HStack {
                     Image(systemName: "person.crop.circle.fill")
                         .resizable()
                         .frame(width: 35, height: 35)
                         .foregroundColor(.red)
-                    
-                    // YOUR USERNAME
                     Text("R3ALCYB3R")
                         .font(.system(size: 18, weight: .bold))
                         .foregroundColor(.white)
-                    
                     Spacer()
-                    
-                    // Clock
-                    Text("9:41 PM")
-                        .font(.system(size: 18, weight: .medium))
-                        .foregroundColor(.white)
+                    Text("9:44 PM").foregroundColor(.white)
                 }
-                .padding(.horizontal, 40)
-                .padding(.top, 30)
+                .padding(.horizontal, 40).padding(.top, 30)
                 
                 Spacer()
 
-                // MARK: - MAIN GAME SELECTION
+                // MAIN SELECTION (Games + Apps)
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
                         ForEach(games, id: \.1) { gameName, imageName in
@@ -53,34 +45,24 @@ struct MainMenuView: View {
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 280, height: 160)
                                     .cornerRadius(10)
-                                    // NEON RED SELECT BORDER
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 10)
                                             .stroke(selectedGame == imageName ? Color.red : Color.clear, lineWidth: 5)
                                             .shadow(color: .red, radius: selectedGame == imageName ? 15 : 0)
                                     )
                                     .scaleEffect(selectedGame == imageName ? 1.05 : 1.0)
-                                    .animation(.spring(response: 0.3), value: selectedGame)
                                 
-                                // Game Title below the image
                                 if selectedGame == imageName {
                                     Text(gameName)
                                         .font(.system(size: 20, weight: .bold))
                                         .foregroundColor(.red)
-                                        .transition(.opacity)
-                                } else {
-                                    Text(" ") // Keeps spacing consistent
-                                        .font(.system(size: 20))
                                 }
                             }
-                            // INTERACTION LOGIC
                             .onTapGesture(count: 2) {
-                                print("Double Tap: Accessing \(gameName)")
-                                // Future: Trigger JIT launch here
+                                launchApp(name: imageName)
                             }
                             .onTapGesture(count: 1) {
                                 selectedGame = imageName
-                                handleSound()
                             }
                         }
                     }
@@ -89,45 +71,49 @@ struct MainMenuView: View {
                 
                 Spacer()
                 
-                // MARK: - BOTTOM SYSTEM ICONS
+                // SYSTEM ICONS
                 HStack(spacing: 40) {
-                    SystemIcon(name: "message.fill")
-                    SystemIcon(name: "photo.fill")
-                    SystemIcon(name: "gamecontroller.fill")
                     SystemIcon(name: "gearshape.fill")
+                    
+                    // SLEEP MODE (The Spiral Trigger)
+                    Button(action: { startSpiralExit() }) {
+                        Image(systemName: "powersleep")
+                            .font(.system(size: 22))
+                            .foregroundColor(.white)
+                            .frame(width: 50, height: 50)
+                            .background(Circle().fill(Color.red))
+                    }
+                    
                     SystemIcon(name: "power")
                 }
                 .padding(.bottom, 40)
             }
+            .rotationEffect(.degrees(rotation))
+            .scaleEffect(scale)
+            .opacity(scale)
         }
     }
 
-    // Sound Logic: Plays click.mp3 after 3 taps
-    func handleSound() {
-        clickCount += 1
-        if clickCount >= 3 {
-            playClickSound()
-            clickCount = 0
+    // LOGIC TO "CODE" THE APPS
+    func launchApp(name: String) {
+        if name == "roblox" {
+            // This attempts to open the actual Roblox app if installed
+            if let url = URL(string: "roblox://") {
+                UIApplication.shared.open(url)
+            }
+        } else if name == "leo" {
+            print("Leo AI: 'Hello R3ALCYB3R, what are we coding today?'")
+            // We can build a LeoChatView next!
         }
     }
-}
 
-// Helper for the small bottom icons
-struct SystemIcon: View {
-    let name: String
-    var body: some View {
-        Image(systemName: name)
-            .font(.system(size: 22))
-            .foregroundColor(.white.opacity(0.8))
-            .frame(width: 50, height: 50)
-            .background(Circle().fill(Color.white.opacity(0.1)))
+    func startSpiralExit() {
+        withAnimation(.easeInOut(duration: 1.2)) {
+            rotation = 720
+            scale = 0
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+            exit(0)
+        }
     }
-}
-
-// Global Sound Player
-var audioPlayer: AVAudioPlayer?
-func playClickSound() {
-    guard let url = Bundle.main.url(forResource: "click", withExtension: "mp3") else { return }
-    try? audioPlayer = AVAudioPlayer(contentsOf: url)
-    audioPlayer?.play()
 }
