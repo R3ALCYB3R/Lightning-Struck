@@ -9,7 +9,7 @@ struct MainMenuView: View {
     let games = [
         ("Super Smash Bros. Ultimate", "smash"),
         ("Mario Kart 8 Deluxe", "kart"),
-        ("Mario Party Superstars", "party")
+        ("Mario Party", "party")
     ]
 
     var body: some View {
