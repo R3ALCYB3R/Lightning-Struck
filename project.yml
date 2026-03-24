@@ -1,6 +1,6 @@
 name: SwitchUI
 options:
-  bundleIdPrefix: com.realcyber
+  bundleIdPrefix: com.r3alcyb3r
 targets:
   SwitchUI:
     type: application
@@ -13,8 +13,6 @@ targets:
       - kart.png
       - party.png
       - header.png
-      - icon.png
-      - jit-icon.png
       - source-logo.png
       - click.mp3
     settings:
@@ -23,7 +21,7 @@ targets:
         GENERATE_INFOPLIST_FILE: NO 
         INFOPLIST_FILE: Info.plist
         CODE_SIGN_ENTITLEMENTS: Entitlements.plist
-        PRODUCT_BUNDLE_IDENTIFIER: com.realcyber.switchui
+        PRODUCT_BUNDLE_IDENTIFIER: com.r3alcyb3r.switchui
         TARGETED_DEVICE_FAMILY: "1,2"
     info:
       plist:
